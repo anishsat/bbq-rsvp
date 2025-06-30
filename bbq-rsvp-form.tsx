@@ -10,7 +10,19 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import { CalendarDays, Clock, MapPin, Users, Flame, Utensils, Wine, ArrowUpIcon, Menu } from "lucide-react"
+import {
+  CalendarDays,
+  Clock,
+  MapPin,
+  Users,
+  Flame,
+  Utensils,
+  Wine,
+  ArrowUpIcon,
+  Menu,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react"
 
 export default function BBQRSVPForm() {
   const [formData, setFormData] = useState({
@@ -20,19 +32,58 @@ export default function BBQRSVPForm() {
     guests: "0",
     dietary: "",
     message: "",
-    bringDish: false,
   })
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [errorMessage, setErrorMessage] = useState("")
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const encode = (data: Record<string, string>) => {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("RSVP submitted:", formData)
-    // Handle form submission here
+    setIsSubmitting(true)
+    setErrorMessage("")
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "bbq-rsvp",
+          ...formData,
+        }),
+      })
+
+      if (response.ok) {
+        setSubmitStatus("success")
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          attendance: "",
+          guests: "0",
+          dietary: "",
+          message: "",
+        })
+      } else {
+        throw new Error("Form submission failed")
+      }
+    } catch (error) {
+      setSubmitStatus("error")
+      setErrorMessage("Something went wrong. Please try again or just text me directly!")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -236,7 +287,7 @@ export default function BBQRSVPForm() {
                 </p>
                 <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
                   {
-                    "The real answer: I did too much gardening (and my rent’s too expensive) not to use my garden for BBQs. This webpage (built in 5 minutes) gives me no excuse but to host!"
+                    "The real answer: I did too much gardening (and my rent's too expensive) not to use my garden for BBQs. This webpage (built in 5 minutes) gives me no excuse but to host!"
                   }
                 </p>
               </div>
@@ -252,112 +303,162 @@ export default function BBQRSVPForm() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-white">
-                      Your Name *
-                    </Label>
-                    <Input
-                      id="name"
-                      placeholder="What should I call you?"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                    />
+              {submitStatus === "success" ? (
+                <div className="text-center space-y-6 py-8">
+                  <div className="flex justify-center">
+                    <CheckCircle className="w-16 h-16 text-green-400" />
                   </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-white">
-                      Email *
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="What's an RSVP form without email confirmation?"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                    />
+                  <div className="space-y-4">
+                    <h2 className="text-2xl font-semibold text-white">Received your response!</h2>
+                    <p className="text-gray-300 text-lg max-w-md mx-auto">
+                      See you Sunday (hopefully), and don't hesitate to shoot me a text (I'll probably text you anyway,
+                      this is just for fun).
+                    </p>
                   </div>
                 </div>
+              ) : (
+                <>
+                  {submitStatus === "error" && (
+                    <div className="mb-6 p-4 bg-red-500/20 border border-red-500/30 rounded-md flex items-center gap-3">
+                      <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
+                      <p className="text-red-300">{errorMessage}</p>
+                    </div>
+                  )}
 
-                <div className="space-y-2">
-                  <Label htmlFor="attendance" className="text-white">
-                    Will you be joining us? *
-                  </Label>
-                  <Select
-                    value={formData.attendance}
-                    onValueChange={(value) => setFormData({ ...formData, attendance: value })}
-                  >
-                    <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                      <SelectValue placeholder="Let me know..." />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="yes">I'll be there!</SelectItem>
-                      <SelectItem value="maybe">Should be (I'll message you)</SelectItem>
-                      <SelectItem value="no">Can't make it this time 😢</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+                  <form name="bbq-rsvp" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-6">
+                    <input type="hidden" name="form-name" value="bbq-rsvp" />
 
-                <div className="space-y-2">
-                  <Label htmlFor="guests" className="text-white">
-                    How many guests are you bringing?
-                  </Label>
-                  <Select
-                    value={formData.guests}
-                    onValueChange={(value) => setFormData({ ...formData, guests: value })}
-                  >
-                    <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                      <SelectValue placeholder="Just you or bringing the crew?" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="0">Just me!</SelectItem>
-                      <SelectItem value="1">+1 (bringing a partner/buddy)</SelectItem>
-                      <SelectItem value="2">+2 (small entourage)</SelectItem>
-                      <SelectItem value="3">+3 or more (you're popular)</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="name" className="text-white">
+                          Your Name *
+                        </Label>
+                        <Input
+                          id="name"
+                          name="name"
+                          placeholder="What should I call you?"
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          required
+                          disabled={isSubmitting}
+                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 disabled:opacity-50"
+                        />
+                      </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="dietary" className="text-white">
-                    Any dietary restrictions?
-                  </Label>
-                  <Input
-                    id="dietary"
-                    placeholder="Vegetarian, allergies, or 'I only eat organic everything'"
-                    value={formData.dietary}
-                    onChange={(e) => setFormData({ ...formData, dietary: e.target.value })}
-                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                  />
-                </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email" className="text-white">
+                          Email *
+                        </Label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          placeholder="What's an RSVP form without email confirmation?"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          required
+                          disabled={isSubmitting}
+                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 disabled:opacity-50"
+                        />
+                      </div>
+                    </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="message" className="text-white">
-                    Anything else I should know?
-                  </Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Special requests, song recommendations, or just say hi!"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={3}
-                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                  />
-                </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="attendance" className="text-white">
+                        Will you be joining us? *
+                      </Label>
+                      <Select
+                        name="attendance"
+                        value={formData.attendance}
+                        onValueChange={(value) => setFormData({ ...formData, attendance: value })}
+                        disabled={isSubmitting}
+                        required
+                      >
+                        <SelectTrigger className="bg-white/10 border-white/20 text-white disabled:opacity-50">
+                          <SelectValue placeholder="Let me know..." />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="yes">I'll be there!</SelectItem>
+                          <SelectItem value="maybe">Should be (I'll message you)</SelectItem>
+                          <SelectItem value="no">Can't make it this time 😢</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      {/* Hidden input for Netlify form detection */}
+                      <input type="hidden" name="attendance" value={formData.attendance} />
+                    </div>
 
-                <Button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white py-4 text-base md:text-lg font-semibold shadow-lg"
-                >
-                  <span className="hidden sm:inline">Send My RSVP (And Judge Me Silently)</span>
-                  <span className="sm:hidden">Send My RSVP</span>
-                </Button>
-              </form>
+                    <div className="space-y-2">
+                      <Label htmlFor="guests" className="text-white">
+                        How many guests are you bringing?
+                      </Label>
+                      <Select
+                        name="guests"
+                        value={formData.guests}
+                        onValueChange={(value) => setFormData({ ...formData, guests: value })}
+                        disabled={isSubmitting}
+                      >
+                        <SelectTrigger className="bg-white/10 border-white/20 text-white disabled:opacity-50">
+                          <SelectValue placeholder="Just you or bringing the crew?" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="0">Just me!</SelectItem>
+                          <SelectItem value="1">+1 (bringing a partner/buddy)</SelectItem>
+                          <SelectItem value="2">+2 (small entourage)</SelectItem>
+                          <SelectItem value="3">+3 or more (you're popular)</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      {/* Hidden input for Netlify form detection */}
+                      <input type="hidden" name="guests" value={formData.guests} />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="dietary" className="text-white">
+                        Any dietary restrictions?
+                      </Label>
+                      <Input
+                        id="dietary"
+                        name="dietary"
+                        placeholder="Vegetarian, allergies, or 'I only eat organic everything'"
+                        value={formData.dietary}
+                        onChange={(e) => setFormData({ ...formData, dietary: e.target.value })}
+                        disabled={isSubmitting}
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 disabled:opacity-50"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="message" className="text-white">
+                        Anything else I should know?
+                      </Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        placeholder="Special requests, song recommendations, or just say hi!"
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        rows={3}
+                        disabled={isSubmitting}
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 disabled:opacity-50"
+                      />
+                    </div>
+
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting || !formData.name || !formData.email || !formData.attendance}
+                      className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white py-4 text-base md:text-lg font-semibold shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <span>Sending RSVP...</span>
+                      ) : (
+                        <>
+                          <span className="hidden sm:inline">Send My RSVP (And Judge Me Silently)</span>
+                          <span className="sm:hidden">Send My RSVP</span>
+                        </>
+                      )}
+                    </Button>
+                  </form>
+                </>
+              )}
             </CardContent>
           </Card>
 
