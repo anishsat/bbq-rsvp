@@ -287,7 +287,7 @@ export default function BBQRSVPForm() {
                 </p>
                 <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
                   {
-                    "The real answer: I did too much gardening (and my rent's too expensive) not to use my garden for BBQs. This webpage (built in 5 minutes) gives me no excuse but to host!"
+                    "The real answer: I did too much gardening (and my rent\'s too expensive) not to use my garden for BBQs. This webpage (built in 5 minutes) gives me no choice but to host!"
                   }
                 </p>
               </div>
