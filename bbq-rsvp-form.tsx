@@ -465,7 +465,7 @@ export default function BBQRSVPForm() {
           {/* Footer */}
           <div className="text-center text-gray-400 pb-8">
             <p className="text-sm">
-              Questions? Just text me like a normal person. I promise I won't make you fill out a form for that too.
+              Questions? Just text me. I promise I won't make you fill out a form for that too.
             </p>
             <p className="text-xs mt-2 opacity-75">
               Powered by overthinking and a genuine love for good food &amp; friends
