@@ -207,6 +207,23 @@ export default function BBQRSVPForm() {
             </p>
           </div>
 
+          {/* Reuse Alert */}
+          <Card className="bg-amber-500/15 backdrop-blur-md border-amber-500/40 shadow-xl">
+            <CardContent className="pt-6 pb-6">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <AlertCircle className="w-5 h-5 text-amber-400 mt-0.5" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-amber-100 leading-relaxed">
+                    <span className="font-medium">Disclaimer:</span> If you received an invite for our last BBQ—yes,
+                    I'm reusing the same landing page. Make a new one? I'm not that jobless.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Event Details Card */}
           <Card className="bg-white/10 backdrop-blur-md border-white/20 shadow-2xl">
             <CardHeader className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border-b border-white/10">
@@ -225,14 +242,14 @@ export default function BBQRSVPForm() {
                     <CalendarDays className="w-6 h-6 text-cyan-400" />
                     <div>
                       <p className="font-semibold text-white text-lg">Sunday</p>
-                      <p className="text-gray-300">July 6th </p>
+                      <p className="text-gray-300">July 20th </p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4">
                     <Clock className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">6:00 PM - Late</p>
+                      <p className="font-semibold text-white text-lg">5:30 PM - Late</p>
                       <p className="text-gray-300">Not too late, I like my bed </p>
                     </div>
                   </div>
@@ -287,7 +304,7 @@ export default function BBQRSVPForm() {
                 </p>
                 <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
                   {
-                    "The real answer: I did too much gardening (and my rent\'s too expensive) not to use my garden for BBQs. This webpage (built in 5 minutes) gives me no choice but to host!"
+                    "The real answer: I did too much gardening (and my rent's too expensive) not to use my garden for BBQs. This webpage (built in 5 minutes) gives me no choice but to host! "
                   }
                 </p>
               </div>
@@ -464,9 +481,7 @@ export default function BBQRSVPForm() {
 
           {/* Footer */}
           <div className="text-center text-gray-400 pb-8">
-            <p className="text-sm">
-              Questions? Just text me. I promise I won't make you fill out a form for that too.
-            </p>
+            <p className="text-sm">Questions? Just text me. I promise I won't make you fill out a form for that too.</p>
             <p className="text-xs mt-2 opacity-75">
               Powered by overthinking and a genuine love for good food &amp; friends
             </p>
