@@ -258,7 +258,7 @@ export default function BBQRSVPForm() {
                     <MapPin className="w-6 h-6 text-cyan-400" />
                     <div>
                       <p className="font-semibold text-white text-lg">My Backyard</p>
-                      <p className="text-gray-300">Address sent with confirmation</p>
+                      <p className="text-gray-300">Address sent with form completion</p>
                     </div>
                   </div>
                 </div>
@@ -275,7 +275,7 @@ export default function BBQRSVPForm() {
                   <div className="flex items-center gap-4">
                     <Utensils className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">{"Bring some food"}</p>
+                      <p className="font-semibold text-white text-lg">{"Bring your own food"}</p>
                       <p className="text-gray-300">{"We'll cook it for you"} </p>
                     </div>
                   </div>
