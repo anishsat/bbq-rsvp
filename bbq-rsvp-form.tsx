@@ -216,8 +216,8 @@ export default function BBQRSVPForm() {
                 </div>
                 <div className="flex-1">
                   <p className="text-amber-100 leading-relaxed">
-                    <span className="font-medium">Disclaimer:</span> If you received an invite for our last BBQ—yes,
-                    I'm reusing the same landing page. Make a new one? I'm not that jobless.
+                    <span className="font-medium">Disclaimer:</span> If you received an invite for our last BBQ—yes, I'm
+                    reusing the same landing page. Make a new one? Promise I'm not that jobless.
                   </p>
                 </div>
               </div>
@@ -395,9 +395,8 @@ export default function BBQRSVPForm() {
                           <SelectValue placeholder="Let me know..." />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="yes">I'll be there!</SelectItem>
-                          <SelectItem value="maybe">Should be (I'll message you)</SelectItem>
-                          <SelectItem value="no">Can't make it this time 😢</SelectItem>
+                          <SelectItem value="yes">My food and I will be there 🍖</SelectItem>
+                          <SelectItem value="maybe">Also yes; no indecisiveness tolerated 😅</SelectItem>
                         </SelectContent>
                       </Select>
                       {/* Hidden input for Netlify form detection */}
