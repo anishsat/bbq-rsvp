@@ -242,7 +242,7 @@ export default function BBQRSVPForm() {
                     <CalendarDays className="w-6 h-6 text-cyan-400" />
                     <div>
                       <p className="font-semibold text-white text-lg">Sunday</p>
-                      <p className="text-gray-300">July 20th </p>
+                      <p className="text-gray-300">August 3rd </p>
                     </div>
                   </div>
 
@@ -298,9 +298,7 @@ export default function BBQRSVPForm() {
               <div className="text-center space-y-4">
                 <h3 className="text-xl font-semibold text-white">Why This Form Exists</h3>
                 <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                  Look, I know what you're thinking. "Cocky twat really created a whole RSVP system for a backyard BBQ?"
-                  And you're absolutely right. The ole events business is dormant, but I'm still paying for the domain:
-                  best believe I'm making the most of it.
+                  Look, I know what you're thinking. "The cocky twat really created a whole RSVP system for a backyard BBQ?" And you're absolutely right. The ole events business is dormant, but I'm still paying for the domain: best believe I'm making the most of it.
                 </p>
                 <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
                   {
