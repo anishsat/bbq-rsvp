@@ -241,15 +241,15 @@ export default function BBQRSVPForm() {
                   <div className="flex items-center gap-4">
                     <CalendarDays className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">Sunday</p>
-                      <p className="text-gray-300">August 17th </p>
+                      <p className="font-semibold text-white text-lg">Wednesday*</p>
+                      <p className="text-gray-300">August 20th </p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4">
                     <Clock className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">5:30 PM - Late</p>
+                      <p className="font-semibold text-white text-lg">6:30 PM - Late</p>
                       <p className="text-gray-300">Not too late, I like my bed </p>
                     </div>
                   </div>
@@ -290,6 +290,18 @@ export default function BBQRSVPForm() {
                 </div>
               </div>
             </CardContent>
+            <CardContent className="pt-0 pb-6">
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+                  *Wait, but it's not on a Sunday? Has hell frozen over?
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  A midweek BBQ is a tall ask, I know, especially for my fellow 996ers. But my brother is in town, and
+                  the 20th will mark my clocking another year closer to justifying my old man habits, so we have to make
+                  an exception! 🎂
+                </p>
+              </div>
+            </CardContent>
           </Card>
 
           {/* Humorous Copy Section */}
@@ -298,7 +310,9 @@ export default function BBQRSVPForm() {
               <div className="text-center space-y-4">
                 <h3 className="text-xl font-semibold text-white">Why This Form Exists</h3>
                 <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                  Look, I know what you're thinking. "The cocky twat really created a whole RSVP system for a backyard BBQ?" And you're absolutely right. The ole events business is dormant, but I'm still paying for the domain: best believe I'm making the most of it.
+                  Look, I know what you're thinking. "The cocky twat really created a whole RSVP system for a backyard
+                  BBQ?" And you're absolutely right. The ole events business is dormant, but I'm still paying for the
+                  domain: best believe I'm making the most of it.
                 </p>
                 <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
                   {
