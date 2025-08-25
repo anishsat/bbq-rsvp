@@ -216,8 +216,7 @@ export default function BBQRSVPForm() {
                 </div>
                 <div className="flex-1">
                   <p className="text-amber-100 leading-relaxed">
-                    <span className="font-medium">Disclaimer:</span> If you received an invite for our last BBQ—yes, I'm
-                    reusing the same landing page. Make a new one? Promise I'm not that jobless.
+                    <span className="font-medium">WARNING:</span> Don't miss this one. It's the last BBQ of the season—and my final chance to milk this infamous landing page for all it's worth. It's been a pleasure, folks; hope you'll indulge me one last time!
                   </p>
                 </div>
               </div>
@@ -241,15 +240,15 @@ export default function BBQRSVPForm() {
                   <div className="flex items-center gap-4">
                     <CalendarDays className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">Wednesday*</p>
-                      <p className="text-gray-300">August 20th </p>
+                      <p className="font-semibold text-white text-lg">Sunday</p>
+                      <p className="text-gray-300">August 31st </p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4">
                     <Clock className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">6:30 PM - Late</p>
+                      <p className="font-semibold text-white text-lg">6 PM - Late</p>
                       <p className="text-gray-300">Not too late, I like my bed </p>
                     </div>
                   </div>
@@ -292,14 +291,8 @@ export default function BBQRSVPForm() {
             </CardContent>
             <CardContent className="pt-0 pb-6">
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-                  *Wait, but it's not on a Sunday? Has hell frozen over?
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  A midweek BBQ is a tall ask, I know, especially for my fellow 996ers. But my brother is in town, and
-                  the 20th will mark my clocking another year closer to justifying my old man habits, so we have to make
-                  an exception! 🎂
-                </p>
+                
+                
               </div>
             </CardContent>
           </Card>
