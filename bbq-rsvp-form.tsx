@@ -216,7 +216,7 @@ export default function BBQRSVPForm() {
                 </div>
                 <div className="flex-1">
                   <p className="text-amber-100 leading-relaxed">
-                    <span className="font-medium">WARNING:</span> Don't miss this one. It's the last BBQ of the season—and my final chance to milk this infamous landing page for all it's worth. It's been a pleasure, folks; hope you'll indulge me one last time!
+                    <span className="font-medium">WARNING:</span> Don't miss this one. It's the last BBQ of the season, and my final chance to milk this infamous landing page for all it's worth. Been a pleasure, folks; hope you'll indulge me one last time!
                   </p>
                 </div>
               </div>
