@@ -1,8 +1,7 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -22,6 +21,8 @@ import {
   Menu,
   CheckCircle,
   AlertCircle,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react"
 
 export default function BBQRSVPForm() {
@@ -38,6 +39,31 @@ export default function BBQRSVPForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState("")
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true)
+  const [isAtBottom, setIsAtBottom] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const windowHeight = window.innerHeight
+      const documentHeight = document.documentElement.scrollHeight
+
+      // Hide indicator when scrolled down significantly (more than 100px)
+      const shouldShow = scrollTop < 100
+      setShowScrollIndicator(shouldShow)
+
+      // Check if near bottom (within 200px)
+      const isNearBottom = scrollTop + windowHeight >= documentHeight - 200
+      setIsAtBottom(isNearBottom)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -216,7 +242,9 @@ export default function BBQRSVPForm() {
                 </div>
                 <div className="flex-1">
                   <p className="text-amber-100 leading-relaxed">
-                    <span className="font-medium">WARNING:</span> Don't miss this one. It's the last BBQ of the season, and my final chance to milk this infamous landing page for all it's worth. Been a pleasure, folks; hope you'll indulge me one last time!
+                    <span className="font-medium">WARNING:</span> Don't miss this one. It's the last BBQ of the season,
+                    and my final chance to milk this infamous landing page for all it's worth. Been a pleasure, folks;
+                    hope you'll indulge me one last time!
                   </p>
                 </div>
               </div>
@@ -290,10 +318,7 @@ export default function BBQRSVPForm() {
               </div>
             </CardContent>
             <CardContent className="pt-0 pb-6">
-              <div className="space-y-4">
-                
-                
-              </div>
+              <div className="space-y-4"></div>
             </CardContent>
           </Card>
 
@@ -491,6 +516,23 @@ export default function BBQRSVPForm() {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Mobile Scroll Indicator */}
+      <div className="md:hidden fixed bottom-6 right-6 z-50">
+        {showScrollIndicator && !isAtBottom && (
+          <div className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center animate-bounce">
+            <ChevronDown className="w-6 h-6 text-white" />
+          </div>
+        )}
+        {isAtBottom && (
+          <button
+            onClick={scrollToTop}
+            className="w-12 h-12 bg-cyan-500/80 backdrop-blur-md border border-cyan-400/50 rounded-full flex items-center justify-center hover:bg-cyan-500 transition-colors shadow-lg"
+          >
+            <ChevronUp className="w-6 h-6 text-white" />
+          </button>
+        )}
       </div>
     </div>
   )
