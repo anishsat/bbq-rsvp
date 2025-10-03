@@ -242,9 +242,7 @@ export default function BBQRSVPForm() {
                 </div>
                 <div className="flex-1">
                   <p className="text-amber-100 leading-relaxed">
-                    <span className="font-medium">WARNING:</span> Don't miss this one. It's the last BBQ of the season,
-                    and my final chance to milk this infamous landing page for all it's worth. Been a pleasure, folks;
-                    hope you'll indulge me one last time!
+                    <span className="font-medium">Okay, I lied.</span> The weather is not too offensive just yet, so you know what that means: we have another BBQ on our hands!
                   </p>
                 </div>
               </div>
@@ -259,7 +257,7 @@ export default function BBQRSVPForm() {
                 Philbeach BBQs
               </CardTitle>
               <CardDescription className="text-base md:text-lg text-gray-300">
-                {"Cookouts, every other Sunday. We've got music and good food/drink, but bring your own too!"}
+                {"Cookouts, every other Sunday (no longer 🥲). We\'ve got music and good food/drink, but bring your own too!"}
               </CardDescription>
             </CardHeader>
             <CardContent className="pt-8">
@@ -269,14 +267,14 @@ export default function BBQRSVPForm() {
                     <CalendarDays className="w-6 h-6 text-cyan-400" />
                     <div>
                       <p className="font-semibold text-white text-lg">Sunday</p>
-                      <p className="text-gray-300">August 31st </p>
+                      <p className="text-gray-300">October 12th  </p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4">
                     <Clock className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">6 PM - Late</p>
+                      <p className="font-semibold text-white text-lg"> 5 PM - Late</p>
                       <p className="text-gray-300">Not too late, I like my bed </p>
                     </div>
                   </div>
