@@ -218,10 +218,10 @@ export default function BBQRSVPForm() {
           <div className="text-center space-y-6">
             <Badge
               variant="secondary"
-              className="px-4 py-2 text-sm font-medium bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
+              className="px-6 py-3 text-lg font-bold bg-cyan-500/20 text-cyan-300 border-cyan-500/30 shadow-lg shadow-cyan-500/20 animate-pulse"
             >
-              <Flame className="w-4 h-4 mr-2" />
-              Summer '25 Cookouts
+              <Flame className="w-6 h-6 mr-2" />
+              THE BIG FINALE
             </Badge>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
@@ -242,7 +242,8 @@ export default function BBQRSVPForm() {
                 </div>
                 <div className="flex-1">
                   <p className="text-amber-100 leading-relaxed">
-                    <span className="font-medium">Okay, I lied.</span> The weather is not too offensive just yet, so you know what that means: we have another BBQ on our hands!
+                    <span className="font-medium">{"We have a bonus on our hands."}</span> Tragically, I am 99% likely
+                    to be moving out. Which means this is the last Philbeach BBQ, ever! Let's make the most of it.
                   </p>
                 </div>
               </div>
@@ -257,7 +258,9 @@ export default function BBQRSVPForm() {
                 Philbeach BBQs
               </CardTitle>
               <CardDescription className="text-base md:text-lg text-gray-300">
-                {"Cookouts, every other Sunday (no longer 🥲). We\'ve got music and good food/drink, but bring your own too!"}
+                {
+                  "Cookouts, every other Sunday (no longer 🥲). We've got music and good food/drink, but bring your own too!"
+                }
               </CardDescription>
             </CardHeader>
             <CardContent className="pt-8">
@@ -266,15 +269,15 @@ export default function BBQRSVPForm() {
                   <div className="flex items-center gap-4">
                     <CalendarDays className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">Sunday</p>
-                      <p className="text-gray-300">October 12th  </p>
+                      <p className="font-semibold text-white text-lg">Saturday* </p>
+                      <p className="text-gray-300">October 12th </p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4">
                     <Clock className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg"> 5 PM - Late</p>
+                      <p className="font-semibold text-white text-lg"> 7:15 PM - Late</p>
                       <p className="text-gray-300">Not too late, I like my bed </p>
                     </div>
                   </div>
@@ -308,15 +311,24 @@ export default function BBQRSVPForm() {
                   <div className="flex items-center gap-4">
                     <Wine className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">Bring your own booze </p>
-                      <p className="text-gray-300">{"We probably don't have enough"} </p>
+                      <p className="font-semibold text-white text-lg">Bring booze or don&#39;t </p>
+                      <p className="text-gray-300">{"We have plenty already**"} </p>
                     </div>
                   </div>
                 </div>
               </div>
             </CardContent>
             <CardContent className="pt-0 pb-6">
-              <div className="space-y-4"></div>
+              <p className="text-sm text-gray-400 italic">
+                {
+                  "* Shocker, I know! I have finally taken your advice to do it on a Saturday instead (in reality, it\'s because I\'m unavailable Sunday, but we\'ll ignore that)"
+                }
+              </p>
+              <p className="text-sm text-gray-400 italic mt-2">
+                {
+                  "** Don't worry, we're not alcoholics. We just have 10 BBQs' worth of leftover booze for you folks to finish before we move!"
+                }
+              </p>
             </CardContent>
           </Card>
 
