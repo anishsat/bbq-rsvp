@@ -242,7 +242,7 @@ export default function BBQRSVPForm() {
                 </div>
                 <div className="flex-1">
                   <p className="text-amber-100 leading-relaxed">
-                    <span className="font-medium">{"After a painfully long flat search,"}</span> we finally found a flat worthy to continue the Philbeach legacy. So, it's only right we warm the house with a good old barbecue.
+                    <span className="font-medium">{"After a painfully long flat search,"}</span> we finally found a flat worthy to continue the Philbeach legacy*. So, it's only right we warm the house with a good old barbecue.
                   </p>
                 </div>
               </div>
