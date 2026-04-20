@@ -254,7 +254,7 @@ export default function BBQRSVPForm() {
             <CardHeader className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border-b border-white/10">
               <CardTitle className="flex items-center gap-3 text-2xl md:text-3xl text-white">
                 <Flame className="w-6 h-6 md:w-8 md:h-8 text-cyan-400" />
-                Philbeach BBQs
+                Colville BBQs
               </CardTitle>
               <CardDescription className="text-base md:text-lg text-gray-300">
                 {
