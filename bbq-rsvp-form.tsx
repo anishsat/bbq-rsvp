@@ -244,6 +244,9 @@ export default function BBQRSVPForm() {
                   <p className="text-amber-100 leading-relaxed">
                     <span className="font-medium">{"After a painfully long flat search,"}</span> we finally found a flat worthy to continue the Philbeach legacy*. So, it's only right we warm the house with a good old barbecue.
                   </p>
+                  <p className="text-amber-100 leading-relaxed text-sm mt-4">
+                    *If you&apos;re new here, welcome. The novelty of an AI-generated landing page for a party invite seems to have worn off but I promise you it was a hit last year 😅. Either way, please humour me and fill out the RSVP form below!
+                  </p>
                 </div>
               </div>
             </CardContent>
