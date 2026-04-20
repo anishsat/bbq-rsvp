@@ -221,7 +221,7 @@ export default function BBQRSVPForm() {
               className="px-6 py-3 text-lg font-bold bg-cyan-500/20 text-cyan-300 border-cyan-500/30 shadow-lg shadow-cyan-500/20 animate-pulse"
             >
               <Flame className="w-6 h-6 mr-2" />
-              THE BIG FINALE
+              WE'RE BACK
             </Badge>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
