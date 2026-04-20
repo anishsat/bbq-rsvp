@@ -221,7 +221,7 @@ export default function BBQRSVPForm() {
               className="px-6 py-3 text-lg font-bold bg-cyan-500/20 text-cyan-300 border-cyan-500/30 shadow-lg shadow-cyan-500/20 animate-pulse"
             >
               <Flame className="w-6 h-6 mr-2" />
-              THE BIG FINALE
+              WE'RE BACK
             </Badge>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
@@ -242,8 +242,7 @@ export default function BBQRSVPForm() {
                 </div>
                 <div className="flex-1">
                   <p className="text-amber-100 leading-relaxed">
-                    <span className="font-medium">{"We have a bonus on our hands."}</span> Tragically, I am 99% likely
-                    to be moving out. Which means this is the last Philbeach BBQ, ever! Let's make the most of it.
+                    <span className="font-medium">{"After a painfully long flat search,"}</span> we finally found a flat worthy to continue the Philbeach legacy*. So, it's only right we warm the house with a good old barbecue.
                   </p>
                 </div>
               </div>
@@ -255,11 +254,11 @@ export default function BBQRSVPForm() {
             <CardHeader className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border-b border-white/10">
               <CardTitle className="flex items-center gap-3 text-2xl md:text-3xl text-white">
                 <Flame className="w-6 h-6 md:w-8 md:h-8 text-cyan-400" />
-                Philbeach BBQs
+                Colville BBQs
               </CardTitle>
               <CardDescription className="text-base md:text-lg text-gray-300">
                 {
-                  "Cookouts, every other Sunday (no longer 🥲). We've got music and good food/drink, but bring your own too!"
+                  "Cookouts, every other Sunday (soon come). We've got music and good food/drink, but bring your own too!"
                 }
               </CardDescription>
             </CardHeader>
@@ -270,14 +269,14 @@ export default function BBQRSVPForm() {
                     <CalendarDays className="w-6 h-6 text-cyan-400" />
                     <div>
                       <p className="font-semibold text-white text-lg">Saturday* </p>
-                      <p className="text-gray-300">October 25th </p>
+                      <p className="text-gray-300">April 25th </p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4">
                     <Clock className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg"> 7:15 PM - Late</p>
+                      <p className="font-semibold text-white text-lg"> 6 PM - Late</p>
                       <p className="text-gray-300">Not too late, I like my bed </p>
                     </div>
                   </div>
@@ -285,7 +284,7 @@ export default function BBQRSVPForm() {
                   <div className="flex items-center gap-4">
                     <MapPin className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">My Backyard</p>
+                      <p className="font-semibold text-white text-lg">Our Backyard</p>
                       <p className="text-gray-300">Address sent with form completion</p>
                     </div>
                   </div>
@@ -311,8 +310,8 @@ export default function BBQRSVPForm() {
                   <div className="flex items-center gap-4">
                     <Wine className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">Bring booze or don&#39;t </p>
-                      <p className="text-gray-300">{"We have plenty already**"} </p>
+                      <p className="font-semibold text-white text-lg">Bring booze your own booze </p>
+                      <p className="text-gray-300">{"We may not have enough"} </p>
                     </div>
                   </div>
                 </div>
@@ -320,14 +319,7 @@ export default function BBQRSVPForm() {
             </CardContent>
             <CardContent className="pt-0 pb-6">
               <p className="text-sm text-gray-400 italic">
-                {
-                  "* Shocker, I know! I have finally taken your advice to do it on a Saturday instead (in reality, it\'s because I\'m unavailable Sunday, but we\'ll ignore that)"
-                }
-              </p>
-              <p className="text-sm text-gray-400 italic mt-2">
-                {
-                  "** Don't worry, we're not alcoholics. We just have 10 BBQs' worth of leftover booze for you folks to finish before we move!"
-                }
+                {"*Don't worry, the biweekly Sunday BBQs will be back soon enough!"}
               </p>
             </CardContent>
           </Card>
