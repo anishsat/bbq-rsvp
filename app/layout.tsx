@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   generator: "thefinalshot.co",
   openGraph: {
     title: "Colville BBQs",
-    description: "The best cookouts in town (your words, not mine...)",
+    description: "New year, new flat: cookouts are back",
     type: "website",
     url: "https://bbq.thefinalshot.co",
     siteName: "Colville BBQs",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Colville BBQs",
-    description: "The best cookouts in town (your words, not mine...)",
+    description: "New year, new flat: cookouts are back",
     images: ["https://bbq.thefinalshot.co/og-image.png"],
   },
 }
