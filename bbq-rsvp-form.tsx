@@ -249,11 +249,6 @@ export default function BBQRSVPForm() {
             </CardContent>
           </Card>
 
-          {/* Side Note for Newcomers */}
-          <p className="text-sm text-gray-500 italic text-center max-w-xl mx-auto">
-            {"*If you're new here, welcome. The novelty of an AI-generated landing page for a party invite seems to have worn off but I promise you it was a hit last year 😅. Either way, please humour me and fill out the RSVP form below!"}
-          </p>
-
           {/* Event Details Card */}
           <Card className="bg-white/10 backdrop-blur-md border-white/20 shadow-2xl">
             <CardHeader className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border-b border-white/10">
@@ -343,6 +338,9 @@ export default function BBQRSVPForm() {
                   {
                     "The real answer: I did too much gardening (and my rent's too expensive) not to use my garden for BBQs. This webpage (built in 5 minutes) gives me no choice but to host! "
                   }
+                </p>
+                <p className="text-sm text-gray-500 italic max-w-2xl mx-auto pt-2">
+                  {"*New here? Welcome! Yes, this is AI-generated. It was a hit last year, humour me."}
                 </p>
               </div>
             </CardContent>
