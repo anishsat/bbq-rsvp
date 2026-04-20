@@ -339,6 +339,9 @@ export default function BBQRSVPForm() {
                     "The real answer: I did too much gardening (and my rent's too expensive) not to use my garden for BBQs. This webpage (built in 5 minutes) gives me no choice but to host! "
                   }
                 </p>
+                <p className="text-sm text-gray-500 italic max-w-2xl mx-auto pt-2">
+                  {"*New here? Welcome. Yes, I know the novelty of an AI-generated landing page for a party invite has worn off, but I promise it was a hit last year. Still, please humour me and fill out the RSVP form below!"}
+                </p>
               </div>
             </CardContent>
           </Card>
