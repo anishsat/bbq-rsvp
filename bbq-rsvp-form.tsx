@@ -310,7 +310,7 @@ export default function BBQRSVPForm() {
                   <div className="flex items-center gap-4">
                     <Wine className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">Bring booze your own booze </p>
+                      <p className="font-semibold text-white text-lg">Bring your own booze </p>
                       <p className="text-gray-300">{"We may not have enough"} </p>
                     </div>
                   </div>
