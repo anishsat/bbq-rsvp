@@ -363,8 +363,8 @@ export default function BBQRSVPForm() {
                   <div className="space-y-4">
                     <h2 className="text-2xl font-semibold text-white">Received your response!</h2>
                     <p className="text-gray-300 text-lg max-w-md mx-auto">
-                      See you Sunday (hopefully), and don't hesitate to shoot me a text (I'll probably text you anyway,
-                      this is just for fun).
+                      See you soon, and don't hesitate to shoot me a text (I'll probably text you anyway, this is just
+                      for fun).
                     </p>
                   </div>
                 </div>
