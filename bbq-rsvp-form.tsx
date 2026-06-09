@@ -81,11 +81,12 @@ export default function BBQRSVPForm() {
     setErrorMessage("")
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
           "form-name": "bbq-rsvp",
+          "bot-field": "",
           ...formData,
         }),
       })
@@ -376,8 +377,21 @@ export default function BBQRSVPForm() {
                     </div>
                   )}
 
-                  <form name="bbq-rsvp" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-6">
+                  <form
+                    name="bbq-rsvp"
+                    method="POST"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    onSubmit={handleSubmit}
+                    className="space-y-6"
+                  >
                     <input type="hidden" name="form-name" value="bbq-rsvp" />
+                    <p className="hidden">
+                      <label>
+                        {"Don't fill this out if you're human: "}
+                        <input name="bot-field" />
+                      </label>
+                    </p>
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
