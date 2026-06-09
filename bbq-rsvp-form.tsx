@@ -319,7 +319,7 @@ export default function BBQRSVPForm() {
             </CardContent>
             <CardContent className="pt-0 pb-6">
               <p className="text-sm text-gray-400 italic">
-                {"*Don't worry, the biweekly Sunday BBQs will be back soon enough!"}
+                {"*Maybe you guys have converted me to Saturday BBQs after all"}
               </p>
             </CardContent>
           </Card>
