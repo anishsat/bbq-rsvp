@@ -81,11 +81,12 @@ export default function BBQRSVPForm() {
     setErrorMessage("")
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
           "form-name": "bbq-rsvp",
+          "bot-field": "",
           ...formData,
         }),
       })
@@ -363,8 +364,7 @@ export default function BBQRSVPForm() {
                   <div className="space-y-4">
                     <h2 className="text-2xl font-semibold text-white">Received your response!</h2>
                     <p className="text-gray-300 text-lg max-w-md mx-auto">
-                      See you Sunday (hopefully), and don't hesitate to shoot me a text (I'll probably text you anyway,
-                      this is just for fun).
+                      See you soon, and don't hesitate to shoot me a text.
                     </p>
                   </div>
                 </div>
@@ -377,8 +377,21 @@ export default function BBQRSVPForm() {
                     </div>
                   )}
 
-                  <form name="bbq-rsvp" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-6">
+                  <form
+                    name="bbq-rsvp"
+                    method="POST"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    onSubmit={handleSubmit}
+                    className="space-y-6"
+                  >
                     <input type="hidden" name="form-name" value="bbq-rsvp" />
+                    <p className="hidden">
+                      <label>
+                        {"Don't fill this out if you're human: "}
+                        <input name="bot-field" />
+                      </label>
+                    </p>
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
