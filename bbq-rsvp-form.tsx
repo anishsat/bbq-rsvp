@@ -242,7 +242,7 @@ export default function BBQRSVPForm() {
                 </div>
                 <div className="flex-1">
                   <p className="text-amber-100 leading-relaxed">
-                    <span className="font-medium">{"After a painfully long flat search,"}</span> we finally found a flat worthy to continue the Philbeach legacy. So, it's only right we warm the house with a good old barbecue.
+                    <span className="font-medium">{"Biweekly BBQs are back."}</span> Summer is here ladies and gents.
                   </p>
                 </div>
               </div>
@@ -276,8 +276,8 @@ export default function BBQRSVPForm() {
                   <div className="flex items-center gap-4">
                     <Clock className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg"> 12 PM - 5 PM</p>
-                      <p className="text-gray-300">Darties all the way, we love sleep</p>
+                      <p className="font-semibold text-white text-lg"> 5:30 PM - Late</p>
+                      <p className="text-gray-300">Not too late, I like my bed</p>
                     </div>
                   </div>
 
@@ -319,7 +319,7 @@ export default function BBQRSVPForm() {
             </CardContent>
             <CardContent className="pt-0 pb-6">
               <p className="text-sm text-gray-400 italic">
-                {"*Don't worry, the biweekly Sunday BBQs will be back soon enough!"}
+                {"*Maybe you guys have converted me to Saturday BBQs after all"}
               </p>
             </CardContent>
           </Card>
