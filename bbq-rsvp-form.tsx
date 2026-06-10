@@ -259,7 +259,7 @@ export default function BBQRSVPForm() {
               </CardTitle>
               <CardDescription className="text-base md:text-lg text-gray-300">
                 {
-                  "Cookouts, every other Sunday (soon come). We've got music and good food/drink, but bring your own too!"
+                  "Cookouts, every other weekend. We've got music and good food/drink, but bring your own too!"
                 }
               </CardDescription>
             </CardHeader>
