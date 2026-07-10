@@ -320,7 +320,7 @@ export default function BBQRSVPForm() {
             </CardContent>
             <CardContent className="pt-0 pb-6">
               <p className="text-sm text-gray-400 italic">
-                {"*The match starts at 8pm after your chef will be completely occupied"}
+                {"*The match starts at 8pm after which your chef will be completely occupied"}
               </p>
             </CardContent>
           </Card>
