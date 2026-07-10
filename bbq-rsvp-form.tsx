@@ -243,7 +243,7 @@ export default function BBQRSVPForm() {
                 </div>
                 <div className="flex-1">
                   <p className="text-amber-100 leading-relaxed">
-                    <span className="font-medium">{"Biweekly BBQs are back."}</span> Summer is here ladies and gents.
+                    <span className="font-medium">{"FIFA WC Edition!"}</span> Our regular cookouts will be followed by a screening of the match from 8pm! If you have no interest in the football, no judgment if you just come for the food and leave early 🫡
                   </p>
                 </div>
               </div>
