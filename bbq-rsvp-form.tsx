@@ -24,6 +24,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react"
+import { FootballFlourish } from "@/components/football-flourish"
 
 export default function BBQRSVPForm() {
   const [formData, setFormData] = useState({
@@ -123,6 +124,9 @@ export default function BBQRSVPForm() {
         }}
       />
       <div className="fixed inset-0 bg-black/70" />
+
+      {/* World Cup themed intro flourish */}
+      <FootballFlourish />
 
       {/* Content */}
       <div className="relative z-10">
