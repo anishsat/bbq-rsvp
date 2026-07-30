@@ -24,7 +24,6 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react"
-import { FootballFlourish } from "@/components/football-flourish"
 
 export default function BBQRSVPForm() {
   const [formData, setFormData] = useState({
@@ -124,9 +123,6 @@ export default function BBQRSVPForm() {
         }}
       />
       <div className="fixed inset-0 bg-black/70" />
-
-      {/* World Cup themed intro flourish */}
-      <FootballFlourish />
 
       {/* Content */}
       <div className="relative z-10">
@@ -247,7 +243,7 @@ export default function BBQRSVPForm() {
                 </div>
                 <div className="flex-1">
                   <p className="text-amber-100 leading-relaxed">
-                    <span className="font-medium">{"FIFA WC Edition!"}</span> Our regular cookouts will be followed by a screening of the finals from 8pm - if you have no interest in the football, no judgment if you just come for the food and leave early 🫡
+                    <span className="font-medium">{"Biweekly BBQs are back."}</span> Summer is here ladies and gents.
                   </p>
                 </div>
               </div>
@@ -273,16 +269,16 @@ export default function BBQRSVPForm() {
                   <div className="flex items-center gap-4">
                     <CalendarDays className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">Sunday</p>
-                      <p className="text-gray-300"> July 19th </p>
+                      <p className="font-semibold text-white text-lg">Sunday* </p>
+                      <p className="text-gray-300"> June 28th </p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4">
                     <Clock className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg"> 3 PM onwards*</p>
-                      <p className="text-gray-300">Enough time to fuel up before the match</p>
+                      <p className="font-semibold text-white text-lg"> 2 PM onwards</p>
+                      <p className="text-gray-300">Nice & early to keep the Sunday scaries away</p>
                     </div>
                   </div>
 
@@ -324,7 +320,7 @@ export default function BBQRSVPForm() {
             </CardContent>
             <CardContent className="pt-0 pb-6">
               <p className="text-sm text-gray-400 italic">
-                {"*The match starts at 8pm after which your chef will be completely occupied"}
+                {"*Back to Sunday this time, but nice and early to be safe"}
               </p>
             </CardContent>
           </Card>
