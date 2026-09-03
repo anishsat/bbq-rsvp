@@ -270,7 +270,7 @@ export default function BBQRSVPForm() {
                     <CalendarDays className="w-6 h-6 text-cyan-400" />
                     <div>
                       <p className="font-semibold text-white text-lg">Sunday</p>
-                      <p className="text-gray-300"> August 2nd </p>
+                      <p className="text-gray-300"> September 13th </p>
                     </div>
                   </div>
 
