@@ -277,7 +277,7 @@ export default function BBQRSVPForm() {
                   <div className="flex items-center gap-4">
                     <Clock className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">5:30 PM - Late</p>
+                      <p className="font-semibold text-white text-lg">3:30 PM - Late</p>
                       <p className="text-gray-300">Not too late, I like my bed</p>
                     </div>
                   </div>
