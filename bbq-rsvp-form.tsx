@@ -243,7 +243,7 @@ export default function BBQRSVPForm() {
                 </div>
                 <div className="flex-1">
                   <p className="text-amber-100 leading-relaxed">
-                    <span className="font-medium">{"Biweekly BBQs are back."}</span> Summer is here ladies and gents.
+                    <span className="font-medium">{"Season 2 is allmost over -"}</span> catch it before it leaves forever!.
                   </p>
                 </div>
               </div>
