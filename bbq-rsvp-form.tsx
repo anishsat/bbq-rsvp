@@ -243,7 +243,7 @@ export default function BBQRSVPForm() {
                 </div>
                 <div className="flex-1">
                   <p className="text-amber-100 leading-relaxed">
-                    <span className="font-medium">{"Season 2 is allmost over -"}</span> catch it before it leaves forever!.
+                    <span className="font-medium">{"Season 2 is almost over -"}</span> catch it before it leaves forever!
                   </p>
                 </div>
               </div>
