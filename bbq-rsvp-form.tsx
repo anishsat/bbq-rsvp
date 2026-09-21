@@ -243,7 +243,7 @@ export default function BBQRSVPForm() {
                 </div>
                 <div className="flex-1">
                   <p className="text-amber-100 leading-relaxed">
-                    <span className="font-medium">{"Biweekly BBQs are back."}</span> Summer is here ladies and gents.
+                    <span className="font-medium">{"Season 2 is almost over -"}</span> catch it before it leaves forever!
                   </p>
                 </div>
               </div>
@@ -270,14 +270,14 @@ export default function BBQRSVPForm() {
                     <CalendarDays className="w-6 h-6 text-cyan-400" />
                     <div>
                       <p className="font-semibold text-white text-lg">Sunday</p>
-                      <p className="text-gray-300"> September 13th </p>
+                      <p className="text-gray-300"> September 27th </p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4">
                     <Clock className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <p className="font-semibold text-white text-lg">3:30 PM - Late</p>
+                      <p className="font-semibold text-white text-lg">4 PM - Late</p>
                       <p className="text-gray-300">Not too late, I like my bed</p>
                     </div>
                   </div>
